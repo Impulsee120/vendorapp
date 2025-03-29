@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventPro - Add Event</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="dashboard.html" style="color: var(--primary-color);">
+                <i class="fas fa-arrow-left fa-lg"></i>
+            </a>
+            <div class="logo">Add Event</div>
+            <div></div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="form-container">
+            <!-- Basic Info Section -->
+            <div class="form-section">
+                <div class="section-title">
+                    <div class="section-number">1</div>
+                    <h2>Basic Information</h2>
+                </div>
+                
+                <div class="form-group">
+                    <label for="eventName">Event Name</label>
+                    <input type="text" id="eventName" class="form-control" placeholder="Enter event name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="eventDate">Date Attended</label>
+                    <input type="date" id="eventDate" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label for="attendance">Attendance</label>
+                    <select id="attendance" class="form-control">
+                        <option value="">Select a range</option>
+                        <option value="0-100">0-100 people</option>
+                        <option value="101-500">101-500 people</option>
+                        <option value="501-1000">501-1000 people</option>
+                        <option value="1001+">1001+ people</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="revenue">Revenue</label>
+                    <select id="revenue" class="form-control">
+                        <option value="">Select a range</option>
+                        <option value="0-500">$0-$500</option>
+                        <option value="501-1000">$501-$1000</option>
+                        <option value="1001-2000">$1001-$2000</option>
+                        <option value="2001+">$2001+</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="boothFee">Booth Fee</label>
+                    <input type="number" id="boothFee" class="form-control" placeholder="Enter booth fee">
+                </div>
+            </div>
+            
+            <!-- Experience Section -->
+            <div class="form-section">
+                <div class="section-title">
+                    <div class="section-number">2</div>
+                    <h2>Your Experience</h2>
+                </div>
+                
+                <div class="form-group">
+                    <label for="eventDescription">Event Description</label>
+                    <textarea id="eventDescription" class="form-control text-area" maxlength="500" placeholder="Describe how the event was run, organization, etc."></textarea>
+                    <span class="char-counter">0/500</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="vendorExperience">Your Experience</label>
+                    <textarea id="vendorExperience" class="form-control text-area" maxlength="500" placeholder="Share your experience, customer traffic, sales, etc."></textarea>
+                    <span class="char-counter">0/500</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="eventUrl">Event Website/Social Media</label>
+                    <input type="url" id="eventUrl" class="form-control" placeholder="https://...">
+                </div>
+                
+                <div class="form-group">
+                    <label>Overall Rating</label>
+                    <div class="star-rating">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Media Section -->
+            <div class="form-section">
+                <div class="section-title">
+                    <div class="section-number">3</div>
+                    <h2>Media & Contact</h2>
+                </div>
+                
+                <div class="form-group">
+                    <label>Event Flyer/Images</label>
+                    <div class="file-upload">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag and drop files here</p>
+                        <p>or</p>
+                        <button class="btn btn-outline" style="margin-top: 10px;">Browse Files</button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactName">Event Coordinator Contact (Optional)</label>
+                    <input type="text" id="contactName" class="form-control" placeholder="Contact name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactEmail">Contact Email (Optional)</label>
+                    <input type="email" id="contactEmail" class="form-control" placeholder="Contact email">
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit Event</button>
+        </div>
+    </main>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

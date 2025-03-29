@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventPro - Search Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="dashboard.html" style="color: var(--primary-color);">
+                <i class="fas fa-arrow-left fa-lg"></i>
+            </a>
+            <div class="logo">Search Events</div>
+            <a href="profile.html" class="profile-icon">
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Search Bar -->
+        <div style="margin-bottom: 20px;">
+            <div class="search-container" style="width: 100%;">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search events by name, location..." style="width: 100%;">
+            </div>
+        </div>
+        
+        <!-- Filter Button -->
+        <button class="btn btn-outline" style="width: 100%; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+            <span>Filters</span>
+            <i class="fas fa-sliders-h"></i>
+        </button>
+        
+        <!-- Filter Panel (would be toggled in actual app) -->
+        <div class="form-container" style="margin-bottom: 20px;">
+            <h3 style="margin-bottom: 20px; font-family: 'Montserrat', sans-serif;">Advanced Filters</h3>
+            
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" class="form-control" placeholder="City, state, or zip code">
+            </div>
+            
+            <div class="form-group">
+                <label>Date Range</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="date" class="form-control" style="width: 50%;">
+                    <input type="date" class="form-control" style="width: 50%;">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Attendance</label>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <input type="range" min="0" max="3" value="0" style="flex: 1;">
+                    <span>Any</span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Revenue Potential</label>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <input type="range" min="0" max="3" value="0" style="flex: 1;">
+                    <span>Any</span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Minimum Rating</label>
+                <div class="star-rating">
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 10px;">
+                <button class="btn btn-outline" style="flex: 1;">Reset</button>
+                <button class="btn btn-primary" style="flex: 1;">Apply Filters</button>
+            </div>
+        </div>
+        
+        <!-- Search Results -->
+        <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-family: 'Montserrat', sans-serif;">Results (25)</h3>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn btn-outline" style="padding: 5px 10px;">
+                    <i class="fas fa-list"></i>
+                </button>
+                <button class="btn btn-outline" style="padding: 5px 10px;">
+                    <i class="fas fa-map-marker-alt"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Results List -->
+        <div>
+            <!-- Result Item 1 -->
+            <a href="event.html" style="display: flex; background-color: var(--white); border-radius: var(--card-radius); box-shadow: var(--shadow); padding: 15px; margin-bottom: 15px; gap: 15px; text-decoration: none; color: inherit;">
+                <div style="width: 80px; height: 80px; border-radius: 8px; background-image: url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"></div>
+                <div style="flex: 1;">
+                    <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; margin-bottom: 5px;">Summer Craft Market</h3>
+                    <div style="display: flex; gap: 10px; margin-bottom: 5px; font-size: 14px; color: #718096;">
+                        <span><i class="fas fa-map-marker-alt"></i> Portland, OR</span>
+                        <span><i class="far fa-calendar"></i> Aug 15-16, 2023</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span style="margin-right: 10px; font-size: 13px;"><i class="fas fa-users"></i> 500-1000</span>
+                            <span style="font-size: 13px;"><i class="fas fa-dollar-sign"></i> $1000-2000</span>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Result Item 2 -->
+            <a href="event.html" style="display: flex; background-color: var(--white); border-radius: var(--card-radius); box-shadow: var(--shadow); padding: 15px; margin-bottom: 15px; gap: 15px; text-decoration: none; color: inherit;">
+                <div style="width: 80px; height: 80px; border-radius: 8px; background-image: url('https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"></div>
+                <div style="flex: 1;">
+                    <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; margin-bottom: 5px;">Farmers Market Festival</h3>
+                    <div style="display: flex; gap: 10px; margin-bottom: 5px; font-size: 14px; color: #718096;">
+                        <span><i class="fas fa-map-marker-alt"></i> Seattle, WA</span>
+                        <span><i class="far fa-calendar"></i> Sep 5-6, 2023</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span style="margin-right: 10px; font-size: 13px;"><i class="fas fa-users"></i> 1000+</span>
+                            <span style="font-size: 13px;"><i class="fas fa-dollar-sign"></i> $1000-2000</span>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Result Item 3 -->
+            <a href="event.html" style="display: flex; background-color: var(--white); border-radius: var(--card-radius); box-shadow: var(--shadow); padding: 15px; margin-bottom: 15px; gap: 15px; text-decoration: none; color: inherit;">
+                <div style="width: 80px; height: 80px; border-radius: 8px; background-image: url('https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;"></div>
+                <div style="flex: 1;">
+                    <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; margin-bottom: 5px;">Art & Wine Festival</h3>
+                    <div style="display: flex; gap: 10px; margin-bottom: 5px; font-size: 14px; color: #718096;">
+                        <span><i class="fas fa-map-marker-alt"></i> San Francisco, CA</span>
+                        <span><i class="far fa-calendar"></i> Oct 12-14, 2023</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span style="margin-right: 10px; font-size: 13px;"><i class="fas fa-users"></i> 500-1000</span>
+                            <span style="font-size: 13px;"><i class="fas fa-dollar-sign"></i> $2000+</span>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

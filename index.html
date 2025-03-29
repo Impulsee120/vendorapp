@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventPro - Connect Vendors with Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">EventPro</div>
+            <div class="auth-buttons">
+                <a href="#" class="btn btn-outline">Sign In</a>
+                <a href="#" class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+        
+        <div class="hero-overlay">
+            <h1 class="hero-title">Connect, Collaborate, Succeed</h1>
+            <p class="hero-subtitle">Join thousands of vendors and event coordinators sharing insights and discovering opportunities.</p>
+            <div class="cta-buttons">
+                <a href="dashboard.html" class="cta-btn cta-btn-primary">
+                    <i class="fas fa-store"></i>
+                    <span>I am a Vendor</span>
+                </a>
+                <a href="advertisement.html" class="cta-btn cta-btn-outline">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>I am an Event Coordinator</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="main-container">
+        <section class="features">
+            <h2 style="text-align: center; margin-bottom: 30px; font-family: 'Montserrat', sans-serif; color: var(--primary-color);">How EventPro Works</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: center;">
+                <div>
+                    <i class="fas fa-search" style="font-size: 40px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                    <h3 style="margin-bottom: 10px; font-family: 'Montserrat', sans-serif;">Discover Events</h3>
+                    <p>Find local events with vendor reviews, attendance data, and profitability insights.</p>
+                </div>
+                
+                <div>
+                    <i class="fas fa-chart-line" style="font-size: 40px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                    <h3 style="margin-bottom: 10px; font-family: 'Montserrat', sans-serif;">Share Experiences</h3>
+                    <p>Rate events you've attended and help other vendors make informed decisions.</p>
+                </div>
+                
+                <div>
+                    <i class="fas fa-bullhorn" style="font-size: 40px; color: var(--accent-color); margin-bottom: 15px;"></i>
+                    <h3 style="margin-bottom: 10px; font-family: 'Montserrat', sans-serif;">Promote Your Event</h3>
+                    <p>Event coordinators can advertise directly to interested vendors in their area.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div>
+                <div class="footer-logo">EventPro</div>
+                <p class="footer-text">The premier platform connecting vendors with events and helping event coordinators find the perfect vendors.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="index.html">Home</a></li>
+                    <li class="footer-link"><a href="dashboard.html">Vendor Dashboard</a></li>
+                    <li class="footer-link"><a href="advertisement.html">Event Coordinator</a></li>
+                    <li class="footer-link"><a href="search.html">Search Events</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Resources</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="#">Blog</a></li>
+                    <li class="footer-link"><a href="#">Help Center</a></li>
+                    <li class="footer-link"><a href="#">Guidelines</a></li>
+                    <li class="footer-link"><a href="#">Success Stories</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Legal</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="#">Terms of Service</a></li>
+                    <li class="footer-link"><a href="#">Privacy Policy</a></li>
+                    <li class="footer-link"><a href="#">Cookie Policy</a></li>
+                    <li class="footer-link"><a href="#">Content Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div>&copy; 2023 EventPro. All rights reserved.</div>
+            <div>Made with ❤️ for vendors and event coordinators</div>
+        </div>
+    </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

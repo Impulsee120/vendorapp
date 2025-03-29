@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventPro - Settings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .settings-container {
+            background-color: var(--white);
+            border-radius: var(--card-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        .settings-sidebar {
+            width: 100%;
+            background-color: var(--white);
+            border-bottom: 1px solid var(--medium-grey);
+        }
+        
+        .settings-nav {
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        
+        .settings-nav::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .settings-nav-item {
+            padding: 15px 20px;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+        }
+        
+        .settings-nav-item.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .settings-content {
+            padding: 30px;
+        }
+        
+        .settings-section {
+            margin-bottom: 30px;
+        }
+        
+        .settings-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .settings-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .toggle-slider {
+            background-color: var(--primary-color);
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--medium-grey);
+        }
+        
+        .setting-item:last-child {
+            border-bottom: none;
+        }
+        
+        .setting-label {
+            font-weight: 600;
+        }
+        
+        .setting-description {
+            font-size: 14px;
+            color: #718096;
+            margin-top: 5px;
+        }
+        
+        .danger-zone {
+            padding: 20px;
+            border: 1px solid #FC8181;
+            border-radius: var(--card-radius);
+            background-color: #FFF5F5;
+        }
+        
+        .danger-zone h3 {
+            color: #E53E3E;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 10px;
+        }
+        
+        .danger-zone p {
+            color: #718096;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .btn-danger {
+            background-color: #E53E3E;
+            color: var(--white);
+            border: none;
+        }
+        
+        @media (max-width: 768px) {
+            .settings-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="dashboard.html" style="color: var(--primary-color);">
+                <i class="fas fa-arrow-left fa-lg"></i>
+            </a>
+            <div class="logo">Settings</div>
+            <a href="profile.html" class="profile-icon">
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="settings-container">
+            <!-- Settings Navigation -->
+            <div class="settings-sidebar">
+                <div class="settings-nav">
+                    <div class="settings-nav-item active">Account</div>
+                    <div class="settings-nav-item">Profile</div>
+                    <div class="settings-nav-item">Privacy</div>
+                    <div class="settings-nav-item">Notifications</div>
+                    <div class="settings-nav-item">Billing</div>
+                    <div class="settings-nav-item">Security</div>
+                </div>
+            </div>
+            
+            <!-- Settings Content -->
+            <div class="settings-content">
+                <!-- Account Settings Section -->
+                <div class="settings-section">
+                    <h2 class="settings-title">Account Settings</h2>
+                    
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label">Email Address</div>
+                            <div class="setting-description">Your email address is used for login and notifications</div>
+                        </div>
+                        <button class="btn btn-outline">Change</button>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label">Password</div>
+                            <div class="setting-description">Last changed 3 months ago</div>
+                        </div>
+                        <button class="btn btn-outline">Update</button>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label">Two-Factor Authentication</div>
+                            <div class="setting-description">Add an extra layer of security to your account</div>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Privacy Settings Section -->
+                <div class="settings-section">
+                    <h2 class="settings-title">Privacy Settings</h2>
+                    
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label">Profile Visibility</div>
+                            <div class="setting-description">Control who can see your profile information</div>
+                        </div>
+                        <select class="form-control" style="width: auto;">
+                            <option>Everyone</option>
+                            <option>Only Vendors</option>
+                            <option>Only Connections</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label">Show Revenue Information</div>
+                            <div class="setting-description">Display your earnings in event reviews</div>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label">Location Sharing</div>
+                            <div class="setting-description">Allow the app to use your location for nearby events</div>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Notification Settings Section -->
+                <div class="settings-section">
+                    <h2 class="settings-title">Notification Settings</h2>
+                    
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label">Email Notifications</div>
+                            <div class="setting-description">Receive important updates via email</div>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label">Push Notifications</div>
+                            <div class="setting-description">Receive alerts on your device</div>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label">New Event Alerts</div>
+                            <div class="setting-description">Be notified about new events in your area</div>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label">Marketing Communications</div>
+                            <div class="setting-description">Receive promotional and survey emails</div>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Danger Zone Section -->
+                <div class="settings-section">
+                    <div class="danger-zone">
+                        <h3>Danger Zone</h3>
+                        <p>Deleting your account will permanently remove all your data from our platform. This action cannot be undone.</p>
+                        <button class="btn btn-danger">Delete Account</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventPro - Messages</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .messages-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            background-color: var(--white);
+            border-radius: var(--card-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            height: calc(100vh - 140px);
+        }
+        
+        .conversation-list {
+            border-right: 1px solid var(--medium-grey);
+            overflow-y: auto;
+        }
+        
+        .conversation-item {
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid var(--medium-grey);
+            transition: background-color 0.2s;
+        }
+        
+        .conversation-item:hover, .conversation-item.active {
+            background-color: var(--light-grey);
+        }
+        
+        .conversation-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        
+        .conversation-info {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .conversation-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .conversation-preview {
+            font-size: 13px;
+            color: #718096;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .conversation-meta {
+            text-align: right;
+            min-width: 50px;
+        }
+        
+        .conversation-time {
+            font-size: 12px;
+            color: #718096;
+            margin-bottom: 5px;
+        }
+        
+        .unread-badge {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+        }
+        
+        .message-view {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .message-header {
+            padding: 15px;
+            border-bottom: 1px solid var(--medium-grey);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .message-body {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+        }
+        
+        .message-bubble {
+            max-width: 80%;
+            padding: 12px 15px;
+            border-radius: 18px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .message-received {
+            background-color: var(--light-grey);
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .message-sent {
+            background-color: var(--primary-color);
+            color: var(--white);
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .message-time {
+            font-size: 11px;
+            opacity: 0.7;
+            margin-top: 5px;
+            text-align: right;
+        }
+        
+        .message-input {
+            padding: 15px;
+            border-top: 1px solid var(--medium-grey);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .message-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border-radius: 50px;
+            border: 1px solid var(--medium-grey);
+            font-size: 14px;
+        }
+        
+        .send-button {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .send-button:hover {
+            background-color: #133152;
+        }
+        
+        @media (max-width: 768px) {
+            .messages-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .message-view {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="menu-icon" id="menuToggle">
+                <i class="fas fa-bars fa-lg" style="color: var(--primary-color); cursor: pointer;"></i>
+            </div>
+            <div class="logo">Messages</div>
+            <div class="header-icons">
+                <button class="btn btn-outline" style="padding: 6px 12px;">
+                    <i class="fas fa-edit"></i>
+                    New Message
+                </button>
+                <a href="profile.html" class="profile-icon">
+                    <i class="fas fa-user"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation Menu -->
+    <div class="nav-menu" id="navMenu">
+        <div class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </div>
+        <a href="dashboard.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="my-events.html" class="nav-item">
+            <i class="fas fa-calendar-check"></i>
+            <span>My Events</span>
+        </a>
+        <a href="search.html" class="nav-item">
+            <i class="fas fa-compass"></i>
+            <span>Discover Events</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <i class="fas fa-user-circle"></i>
+            <span>My Profile</span>
+        </a>
+        <a href="messages.html" class="nav-item">
+            <i class="fas fa-envelope"></i>
+            <span>Messages</span>
+        </a>
+        <a href="settings.html" class="nav-item">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+        </a>
+        <a href="help.html" class="nav-item">
+            <i class="fas fa-question-circle"></i>
+            <span>Help & Support</span>
+        </a>
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Log Out</span>
+        </a>
+    </div>
+    
+    <!-- Dark Overlay -->
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="messages-container">
+            <!-- Conversation List -->
+            <div class="conversation-list">
+                <!-- Conversation Item 1 -->
+                <div class="conversation-item active">
+                    <div class="conversation-avatar">JD</div>
+                    <div class="conversation-info">
+                        <div class="conversation-name">Jane Doe</div>
+                        <div class="conversation-preview">Looking forward to seeing your booth at the event!</div>
+                    </div>
+                    <div class="conversation-meta">
+                        <div class="conversation-time">10:30 AM</div>
+                        <div class="unread-badge">2</div>
+                    </div>
+                </div>
+                
+                <!-- Conversation Item 2 -->
+                <div class="conversation-item">
+                    <div class="conversation-avatar">MS</div>
+                    <div class="conversation-info">
+                        <div class="conversation-name">Mike Smith</div>
+                        <div class="conversation-preview">Thanks for the information about the Farmers Market!</div>
+                    </div>
+                    <div class="conversation-meta">
+                        <div class="conversation-time">Yesterday</div>
+                    </div>
+                </div>
+                
+                <!-- Conversation Item 3 -->
+                <div class="conversation-item">
+                    <div class="conversation-avatar">AT</div>
+                    <div class="conversation-info">
+                        <div class="conversation-name">Art Festival Organizer</div>
+                        <div class="conversation-preview">Your application has been approved. Booth #42 is...</div>
+                    </div>
+                    <div class="conversation-meta">
+                        <div class="conversation-time">Aug 25</div>
+                    </div>
+                </div>
+                
+                <!-- Conversation Item 4 -->
+                <div class="conversation-item">
+                    <div class="conversation-avatar">LW</div>
+                    <div class="conversation-info">
+                        <div class="conversation-name">Lisa Wong</div>
+                        <div class="conversation-preview">I loved your jewelry at the last event! Are you...</div>
+                    </div>
+                    <div class="conversation-meta">
+                        <div class="conversation-time">Aug 17</div>
+                    </div>
+                </div>
+                
+                <!-- Conversation Item 5 -->
+                <div class="conversation-item">
+                    <div class="conversation-avatar">RC</div>
+                    <div class="conversation-info">
+                        <div class="conversation-name">Robert Chen</div>
+                        <div class="conversation-preview">Do you have any recommendations for booth setup?</div>
+                    </div>
+                    <div class="conversation-meta">
+                        <div class="conversation-time">Aug 10</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Message View -->
+            <div class="message-view">
+                <!-- Message Header -->
+                <div class="message-header">
+                    <div class="conversation-avatar">JD</div>
+                    <div>
+                        <div style="font-weight: 600;">Jane Doe</div>
+                        <div style="font-size: 12px; color: #718096;">Summer Craft Market Organizer</div>
+                    </div>
+                </div>
+                
+                <!-- Message Body -->
+                <div class="message-body" style="display: flex; flex-direction: column;">
+                    <!-- Date Separator -->
+                    <div style="text-align: center; margin: 20px 0; font-size: 12px; color: #718096;">
+                        Today, 10:30 AM
+                    </div>
+                    
+                    <!-- Received Message -->
+                    <div class="message-bubble message-received">
+                        Hi Sarah! I wanted to follow up about your application for the upcoming Summer Craft Market.
+                        <div class="message-time">10:30 AM</div>
+                    </div>
+                    
+                    <!-- Received Message -->
+                    <div class="message-bubble message-received">
+                        Your booth from last year was amazing, and we'd love to have you back! We're offering returning vendors a 10% discount on booth fees.
+                        <div class="message-time">10:31 AM</div>
+                    </div>
+                    
+                    <!-- Sent Message -->
+                    <div class="message-bubble message-sent">
+                        Hi Jane! Thanks for reaching out. I had a great time at the market last year and would definitely like to participate again.
+                        <div class="message-time">10:35 AM</div>
+                    </div>
+                    
+                    <!-- Sent Message -->
+                    <div class="message-bubble message-sent">
+                        That discount sounds great! Could you let me know the dates and booth setup details?
+                        <div class="message-time">10:36 AM</div>
+                    </div>
+                    
+                    <!-- Received Message -->
+                    <div class="message-bubble message-received">
+                        Absolutely! The event will run from August 15-16, with setup available from 7am-10am on the 15th. We're placing you in the same area as last year, which got great foot traffic.
+                        <div class="message-time">10:38 AM</div>
+                    </div>
+                    
+                    <!-- Received Message -->
+                    <div class="message-bubble message-received">
+                        Looking forward to seeing your booth at the event! Let me know if you have any other questions.
+                        <div class="message-time">10:39 AM</div>
+                    </div>
+                </div>
+                
+                <!-- Message Input -->
+                <div class="message-input">
+                    <input type="text" placeholder="Type a message...">
+                    <button class="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

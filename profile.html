@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventPro - My Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="dashboard.html" style="color: var(--primary-color);">
+                <i class="fas fa-arrow-left fa-lg"></i>
+            </a>
+            <div class="logo">My Profile</div>
+            <a href="settings.html" style="color: var(--primary-color);">
+                <i class="fas fa-cog fa-lg"></i>
+            </a>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="profile-cover">
+            <div class="profile-avatar">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80">
+            </div>
+        </div>
+        
+        <!-- Profile Info -->
+        <div class="profile-info">
+            <h1 class="profile-name">Sarah Johnson</h1>
+            <p class="profile-tagline">Handcrafted Jewelry & Accessories | Since 2018</p>
+            <div class="profile-actions">
+                <button class="btn btn-outline">
+                    <i class="fas fa-pencil-alt"></i>
+                    Edit Profile
+                </button>
+                <button class="btn btn-primary">
+                    <i class="fas fa-share-alt"></i>
+                    Share Profile
+                </button>
+            </div>
+        </div>
+        
+        <!-- About Section -->
+        <div class="profile-section">
+            <h2 class="profile-section-title">About</h2>
+            <p style="line-height: 1.6; margin-bottom: 20px;">
+                I create unique, handcrafted jewelry using recycled metals and ethically sourced gemstones. 
+                Each piece is designed and made by hand in my Portland studio. I've been selling at markets
+                and craft fairs since 2018, and love connecting with customers and fellow vendors.
+            </p>
+            
+            <h3 style="margin-bottom: 10px; font-family: 'Montserrat', sans-serif;">Business Details</h3>
+            <ul class="info-list">
+                <li class="info-item">
+                    <i class="fas fa-store"></i>
+                    <span>Silver Lining Jewelry</span>
+                </li>
+                <li class="info-item">
+                    <i class="fas fa-tag"></i>
+                    <span>Handcrafted Jewelry & Accessories</span>
+                </li>
+                <li class="info-item">
+                    <i class="fas fa-history"></i>
+                    <span>Selling for 5 years</span>
+                </li>
+                <li class="info-item">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>Price range: $$-$$$</span>
+                </li>
+                <li class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Portland, Oregon</span>
+                </li>
+            </ul>
+            
+            <h3 style="margin: 20px 0 10px; font-family: 'Montserrat', sans-serif;">Contact Information</h3>
+            <ul class="info-list">
+                <li class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:sarah@silverliningjewelry.com">sarah@silverliningjewelry.com</a>
+                </li>
+                <li class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+15035551234">(503) 555-1234</a>
+                </li>
+                <li class="info-item">
+                    <i class="fas fa-globe"></i>
+                    <a href="https://www.silverliningjewelry.com" target="_blank">www.silverliningjewelry.com</a>
+                </li>
+            </ul>
+            
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-etsy"></i></a>
+            </div>
+        </div>
+        
+        <!-- Product Gallery -->
+        <div class="profile-section">
+            <h2 class="profile-section-title">Product Gallery</h2>
+            <div class="product-gallery">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="product-image">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="product-image">
+                <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="product-image">
+                <img src="https://images.unsplash.com/photo-1603973765319-dff479a4e841?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="product-image">
+                <img src="https://images.unsplash.com/photo-1600721391689-2564bb8055de?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="product-image">
+                <img src="https://images.unsplash.com/photo-1601821765780-754fa98637c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="product-image">
+            </div>
+        </div>
+        
+        <!-- Events Attended -->
+        <div class="profile-section">
+            <h2 class="profile-section-title">Events Attended</h2>
+            
+            <div class="tabs-container">
+                <div class="tabs">
+                    <div class="tab active">Recent Events</div>
+                    <div class="tab">Past Events</div>
+                </div>
+                
+                <!-- Recent Events Tab Content -->
+                <div class="tab-content" style="display: block;">
+                    <div class="event-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">October 2023</div>
+                            <h3 class="timeline-title">Art & Wine Festival</h3>
+                            <p>San Francisco, CA</p>
+                            <div class="rating" style="margin-top: 5px;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p style="margin-top: 5px; font-size: 14px; color: #718096;">
+                                "Amazing turnout and very well organized. One of my best shows of the year!"
+                            </p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">September 2023</div>
+                            <h3 class="timeline-title">Farmers Market Festival</h3>
+                            <p>Seattle, WA</p>
+                            <div class="rating" style="margin-top: 5px;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <p style="margin-top: 5px; font-size: 14px; color: #718096;">
+                                "Great event with steady traffic all weekend. Would definitely attend again."
+                            </p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">August 2023</div>
+                            <h3 class="timeline-title">Summer Craft Market</h3>
+                            <p>Portland, OR</p>
+                            <div class="rating" style="margin-top: 5px;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p style="margin-top: 5px; font-size: 14px; color: #718096;">
+                                "Local favorite with consistent sales and great customer engagement."
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <a href="my-events.html" class="btn btn-outline" style="margin-top: 20px; width: 100%;">
+                        View All Events
+                    </a>
+                </div>
+                
+                <!-- Past Events Tab Content -->
+                <div class="tab-content" style="display: none;">
+                    <div class="event-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">December 2022</div>
+                            <h3 class="timeline-title">Holiday Artisan Market</h3>
+                            <p>Portland, OR</p>
+                            <div class="rating" style="margin-top: 5px;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">October 2022</div>
+                            <h3 class="timeline-title">Autumn Craft Fair</h3>
+                            <p>Seattle, WA</p>
+                            <div class="rating" style="margin-top: 5px;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">July 2022</div>
+                            <h3 class="timeline-title">Summer Art Walk</h3>
+                            <p>Portland, OR</p>
+                            <div class="rating" style="margin-top: 5px;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="my-events.html" class="btn btn-outline" style="margin-top: 20px; width: 100%;">
+                        View All Events
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
