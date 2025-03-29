@@ -6,10 +6,9 @@ EventPro Logo
 
 EventPro is a comprehensive web application that connects vendors with events and helps event coordinators find the perfect vendors. The platform allows vendors to share experiences, rate events, and discover new opportunities while enabling event coordinators to promote their events directly to interested vendors.
 
-📱 Demo Screens
-Landing Page	Vendor Dashboard	Event Details
-Landing Page	Dashboard	Event Details
+
 ✨ Features
+
 For Vendors
 Event Discovery: Find local events with vendor reviews, attendance data, and profitability insights
 Experience Sharing: Rate events you've attended and help other vendors make informed decisions
